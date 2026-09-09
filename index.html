@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conversor simples de horário entre Brasil e Nova Zelândia.">
+  <meta name="theme-color" content="#102A43">
+
+  <title>Que Horas São Aí?</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="new-zealand">
+  <main class="app">
+    <header class="app__header">
+      <div class="route-pill" aria-label="Conversão entre Brasil e Nova Zelândia">
+        <span>BRASIL</span>
+        <span aria-hidden="true">↔</span>
+        <span>NOVA ZELÂNDIA</span>
+      </div>
+
+      <h1>Que Horas São Aí?</h1>
+
+      <p class="subtitle">
+        Veja de forma simples o dia e a hora do outro lado do mundo.
+      </p>
+    </header>
+
+    <section class="converter-card country-card country-card--source" aria-labelledby="sourceName">
+      <div class="country-card__accent" aria-hidden="true"></div>
+
+      <div class="country">
+        <div class="country__flag flag-frame" id="sourceFlag" aria-hidden="true"></div>
+
+        <div class="country__info">
+          <p class="small-label">HORÁRIO DE ORIGEM</p>
+          <h2 id="sourceName">Nova Zelândia</h2>
+          <p class="timezone-name" id="sourceTimezoneName">Auckland</p>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <div class="field">
+          <label for="dateInput">Que dia?</label>
+          <input type="date" id="dateInput" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="timeInput">Que horas?</label>
+          <input type="time" id="timeInput" step="60" autocomplete="off">
+        </div>
+      </div>
+
+      <button class="primary-button" id="convertButton" type="button">
+        Ver horário do outro lado
+      </button>
+    </section>
+
+    <div class="direction-area">
+      <div class="arrow" aria-hidden="true">↓</div>
+
+      <button class="secondary-button" id="swapButton" type="button">
+        <span class="button-icon" aria-hidden="true">↻</span>
+        Inverter países
+      </button>
+    </div>
+
+    <section class="result-card country-card country-card--target" aria-live="polite" aria-atomic="true">
+      <div class="country-card__accent" aria-hidden="true"></div>
+
+      <p class="small-label">NO OUTRO LADO SERÁ</p>
+
+      <div class="country country--result">
+        <div class="country__flag flag-frame" id="targetFlag" aria-hidden="true"></div>
+
+        <div class="country__info">
+          <h2 id="targetName">Brasil</h2>
+          <p class="timezone-name" id="targetTimezoneName">Horário de Brasília</p>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="result__period" id="periodIcon" aria-hidden="true">🌅</div>
+        <p class="result__time" id="resultTime">--:--</p>
+        <p class="result__date" id="resultDate">Escolha uma data e um horário</p>
+        <p class="result__message" id="resultMessage">
+          Depois toque em “Ver horário do outro lado”.
+        </p>
+      </div>
+    </section>
+
+    <button class="now-button" id="nowButton" type="button">
+      <span aria-hidden="true">◷</span>
+      Mostrar a hora agora
+    </button>
+
+    <p class="footer-note">
+      Brasil: horário de Brasília • Nova Zelândia: horário de Auckland
+    </p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
